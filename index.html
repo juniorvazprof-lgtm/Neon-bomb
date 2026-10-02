@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#0b0220">
+<title>Bomba Neon 84</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Monoton&family=Chakra+Petch:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <div id="stage"></div>
+  <div id="scan"></div><div id="vig"></div><div id="flash"></div>
+  <div id="combo"></div>
+
+  <header id="hud">
+    <div class="row1">
+      <span class="arena" id="arenaLbl">1/3</span>
+      <span class="mod" id="modLbl">—</span>
+      <span class="timer" id="timer"></span>
+      <button id="mute" aria-label="Som">SOM</button>
+    </div>
+    <div id="chips"></div>
+  </header>
+
+  <div id="dpad" aria-label="Direcional"><div class="arm u">▲</div><div class="arm d">▼</div><div class="arm l">◀</div><div class="arm r">▶</div><div class="c"></div></div>
+  <div id="beatBar" data-n="4"><i class="boom"></i><i></i><i></i><i></i></div>
+  <button id="bombBtn" aria-label="Soltar bomba" data-i="bombBtn"></button>
+
+  <div id="ghostBar" hidden data-i="ghostBar"></div>
+  <div id="beatText">NA BATIDA +1</div>
+  <div id="toast"></div>
+  <div id="count" hidden></div>
+
+  <div class="ov" id="ovStart">
+    <div class="card">
+      <div class="logo">BOMBA<small>NEON 84</small></div>
+      <p class="lede" data-i="lede"></p>
+      <div class="how">
+        <div><b data-i="h_compass"></b><span data-i="h_compass_d"></span></div>
+        <div><b data-i="h_bomb"></b><span data-i="h_bomb_d"></span></div>
+        <div><b data-i="h_kick"></b><span data-i="h_kick_d"></span></div>
+        <div><b data-i="h_items"></b><span data-i="h_items_d"></span></div>
+        <div><b data-i="h_ghost"></b><span data-i="h_ghost_d"></span></div>
+      </div>
+      <div class="opts">
+        <div class="opt"><span data-i="o_lang"></span><div class="seg" id="segLang"><button data-v="pt">PT</button><button data-v="en">EN</button></div></div>
+        <div class="opt"><span data-i="o_fx"></span><div class="seg" id="segFx"><button data-v="0" data-i="fx0"></button><button data-v="1" data-i="fx1"></button><button data-v="2" data-i="fx2"></button></div></div>
+      </div>
+      <button class="btn" id="startBtn" data-i="start"></button>
+      <div class="keys" data-i="keys"></div>
+    </div>
+  </div>
+
+  <div class="ov" id="ovRoulette" hidden>
+    <div class="card">
+      <div class="eyebrow" id="rouEyebrow">ROLETA DA ARENA 1</div>
+      <div id="reelWin"><div id="reel"></div></div>
+      <div id="modDesc"></div>
+      <button class="btn" id="enterBtn" disabled data-i="enter"></button>
+    </div>
+  </div>
+
+  <div class="ov" id="ovPick" hidden>
+    <div class="card">
+      <div class="eyebrow" data-i="won"></div>
+      <h2 data-i="pick"></h2>
+      <div id="cards"></div>
+    </div>
+  </div>
+
+  <div class="ov" id="ovEnd" hidden>
+    <div class="card">
+      <div class="eyebrow" id="endEyebrow">FIM DA RUN</div>
+      <h2 id="endTitle">Você caiu</h2>
+      <div class="stats">
+        <div><b id="stA">0</b><span data-i="st_a"></span></div>
+        <div><b id="stK">0</b><span data-i="st_k"></span></div>
+        <div><b id="stB">0</b><span data-i="st_b"></span></div>
+      </div>
+      <div class="lede" id="endBuild"></div>
+      <button class="btn" id="againBtn" data-i="again"></button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+<script src="js/config.js"></script>
+<script src="js/render.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/state.js"></script>
+<script src="js/arena.js"></script>
+<script src="js/mechanics.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/entities.js"></script>
+<script src="js/loop.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/input.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
